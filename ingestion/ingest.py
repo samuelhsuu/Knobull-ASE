@@ -83,7 +83,7 @@ def ingest_csv(file: str):
 			except Exception as e:
 				print(f" -> Error uploading vectors for this row {e}")
 if __name__ == "__main__":
-	file = "../data/sample_courses.csv"
+	file = "/data/sample_courses.csv"
 	ingest_csv(file)
 
 

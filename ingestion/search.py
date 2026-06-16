@@ -41,5 +41,5 @@ def run_hybrid_search(user_query: str):
 			print(f"Text Snippet: {row['content_chunk']}") # type: ignore
 
 if __name__ == "__main__":
-	run_hybrid_search("Quantum algorithms")
+	run_hybrid_search("Quantum Algorithms")
 
