@@ -53,7 +53,7 @@ app.post('/api/recommend', async (req, res) => {
 		const queryEmbedding = Array.from(output.data); // Float32Array -> JS array
 
 		console.log("Querying Supabase pgvector");
-		const { data, error } = await supabase.rpc('hybrid_search', {
+		const { data: matches, error: searchError } = await supabase.rpc('hybrid_search', {
 			query_text: goal,
 			query_embedding: queryEmbedding,
 			match_count: 5,
@@ -61,15 +61,43 @@ app.post('/api/recommend', async (req, res) => {
 			semantic_weight: 0.7,
 			rrf_k: 50
 		});
-		if(error){
-			console.error("Supabase RPC Error: ", error);
-			throw error;
+		if(searchError){
+			console.error("Supabase RPC Error: ", searchError);
+			throw searchError;
 		}
-			console.log(`Found ${data.length} relevant matches`);
+
+		// hybrid_search only returns chunk-level rows (document_id, content_chunk, combined_score);
+		// join in the document metadata the frontend needs to render a card.
+		const documentIds = [...new Set(matches.map((match) => match.document_id))];
+		const { data: documents, error: documentsError } = await supabase
+			.from('documents')
+			.select('id, title, description, category, type, link')
+			.in('id', documentIds);
+		if(documentsError){
+			console.error("Supabase documents lookup error: ", documentsError);
+			throw documentsError;
+		}
+
+		const documentsById = new Map(documents.map((document) => [document.id, document]));
+		const recommendations = matches.map((match) => {
+			const document = documentsById.get(match.document_id);
+			return {
+				id: match.document_id,
+				title: document?.title ?? null,
+				description: document?.description ?? null,
+				category: document?.category ?? null,
+				type: document?.type ?? null,
+				link: document?.link ?? null,
+				matchedSnippet: match.content_chunk,
+				score: match.combined_score
+			};
+		});
+
+			console.log(`Found ${recommendations.length} relevant matches`);
 			return res.json({
 				success: true,
-				count: data.length,
-				recommendations: data
+				count: recommendations.length,
+				recommendations
 			});
 	}
 	catch (error){
