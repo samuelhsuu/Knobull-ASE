@@ -48,3 +48,10 @@ Thumbs.db
 *.ntvs*
 *.njsproj
 *.sln
+
+
+# Misc
+
+CLAUDE.md
+frontend.md
+goal.md
