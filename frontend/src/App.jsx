@@ -1,120 +1,77 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import ResultCard from './components/ResultCard'
 import './App.css'
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001'
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [goal, setGoal] = useState('')
+  const [status, setStatus] = useState('idle') // idle | loading | success | error
+  const [recommendations, setRecommendations] = useState([])
+  const [errorMessage, setErrorMessage] = useState('')
+
+  async function handleSubmit(event) {
+    event.preventDefault()
+    const trimmedGoal = goal.trim()
+    if (!trimmedGoal) return
+
+    setStatus('loading')
+    setErrorMessage('')
+
+    try {
+      const response = await fetch(`${API_URL}/api/recommend`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ goal: trimmedGoal }),
+      })
+      const data = await response.json()
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || 'Something went wrong.')
+      }
+      setRecommendations(data.recommendations)
+      setStatus('success')
+    } catch (error) {
+      setErrorMessage(error.message)
+      setStatus('error')
+    }
+  }
+
+  const searched = status !== 'idle'
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
+      <section id="hero" className={searched ? 'searched' : ''}>
+        <h1>Knobull</h1>
+        {!searched && (
+          <p>Tell us what you're working toward, and we'll match you to courses and resources.</p>
+        )}
+        <form id="goal-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={goal}
+            onChange={(event) => setGoal(event.target.value)}
+            placeholder="e.g. I want to save the planet"
+            aria-label="Your academic or career goal"
+          />
+          <button type="submit" disabled={status === 'loading' || !goal.trim()} aria-label="Search">
+            {status === 'loading' ? '…' : 'Search'}
+          </button>
+        </form>
       </section>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
+      <section id="results">
+        {status === 'error' && <p className="status-message error">{errorMessage}</p>}
+        {status === 'success' && recommendations.length === 0 && (
+          <p className="status-message">No matches found. Try rephrasing your goal.</p>
+        )}
+        {recommendations.length > 0 && (
+          <div className="result-list">
+            {recommendations.map((recommendation) => (
+              <ResultCard key={recommendation.id} recommendation={recommendation} />
+            ))}
+          </div>
+        )}
       </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
     </>
   )
 }
