@@ -22,10 +22,10 @@ def chunk_text(text: str, words_per_chunk: int = 10, overlap: int = 5):
 	chunks = []
 	for i in range(0, len(words), words_per_chunk-overlap):
 		chunk_words = words[i:i + words_per_chunk]
-		chunks.append("".join(chunk_words))
+		chunks.append(" ".join(chunk_words))
 		if i + words_per_chunk >= len(words):
 			break
-	return model.encode(chunks, convert_to_numpy=True)
+	return chunks
 
 # Process csv file -> database
 def ingest_csv(file: str):
@@ -65,21 +65,21 @@ def ingest_csv(file: str):
 				continue
 
 			# Populate chunks table
-			chunks = chunk_text(desc)
-			print(f" -> Split text into {len(chunks)} chunks.")
+			text_chunks = chunk_text(f"{title}. {desc}")
+			chunk_embeddings = model.encode(text_chunks, convert_to_numpy=True)
+			print(f" -> Split text into {len(text_chunks)} chunks.")
 
 			db_chunks = []
-			for chunk_index, insert_chunk_text in enumerate(chunks):
-				#vector = model.encode(insert_chunk_text, convert_to_numpy=True).tolist()
+			for chunk_index, (chunk, embedding) in enumerate(zip(text_chunks, chunk_embeddings)):
 				db_chunks.append({
 					"document_id": id,
-					"content_chunk" : desc, # desc for testing, content for actual
+					"content_chunk" : chunk,
 					"chunk_index": chunk_index,
-					"embedding": insert_chunk_text.tolist()
+					"embedding": embedding.tolist()
 				})
 			try:
 				supabase.table("chunks").insert(db_chunks).execute()
-				print(f" -> Successfully uploaded {len(chunks)} vectors to 'chunks' table.")
+				print(f" -> Successfully uploaded {len(db_chunks)} vectors to 'chunks' table.")
 			except Exception as e:
 				print(f" -> Error uploading vectors for this row {e}")
 if __name__ == "__main__":
