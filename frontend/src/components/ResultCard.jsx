@@ -19,8 +19,8 @@ function ResultCard({ recommendation }) {
     <article className="result">
       <div className="result-meta">
         {displayUrl && <span className="result-url">{displayUrl}</span>}
-        {category && <span className="result-tag">{category}</span>}
-        {type && <span className="result-tag">{formatType(type)}</span>}
+        {category && <span>{category}</span>}
+        {type && <span>{formatType(type)}</span>}
       </div>
       {link ? (
         <a className="result-title" href={link} target="_blank" rel="noreferrer">
