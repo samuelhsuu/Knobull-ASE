@@ -1,10 +1,11 @@
-import { useState } from 'react'
-import ResultCard from './components/ResultCard'
-import './App.css'
+import { useState } from 'react';
+import ResultCard from '../components/ResultCard';
+import Navbar from '../components/Navbar';
+import "./Recommend.css";
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001'
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
 
-function App() {
+function Recommend() {
   const [goal, setGoal] = useState('')
   const [status, setStatus] = useState('idle') // idle | loading | success | error
   const [recommendations, setRecommendations] = useState([])
@@ -40,8 +41,9 @@ function App() {
 
   return (
     <>
+      <Navbar/>
       <section id="hero" className={searched ? 'searched' : ''}>
-        <h1>Knobull</h1>
+        <h1>Recommend</h1>
         {!searched && (
           <p>Tell us what you're working toward, and we'll match you to courses and resources.</p>
         )}
@@ -50,7 +52,7 @@ function App() {
             type="text"
             value={goal}
             onChange={(event) => setGoal(event.target.value)}
-            placeholder="e.g. I want to save the planet"
+            placeholder="e.g. Computer Science"
             aria-label="Your academic or career goal"
           />
           <button type="submit" disabled={status === 'loading' || !goal.trim()} aria-label="Search">
@@ -76,4 +78,4 @@ function App() {
   )
 }
 
-export default App
+export default Recommend

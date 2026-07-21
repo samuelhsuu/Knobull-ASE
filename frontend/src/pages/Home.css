@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Sirin Stencil");
+.page-container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.image-container{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 5rem;
+}
+.image-container img{
+	background-color:#efeeef;
+	border-radius: 10px;
+	padding: 10px;
+	width: 15%;
+	height: auto;
+}
+.logo{
+	width: 20vw;
+	height: auto;
+	margin-top: 85px;
+	margin-bottom: -20px;
+}
+.header{
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+	font-size: 48px;
+	color: black;
+	margin-top: 20px;
+	margin-bottom: 15px;         
+}
+.slogan{
+	font-family: 'Sirin Stencil', sans-serif;
+	font-size: 32px;
+	color: #3b1f1f;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
