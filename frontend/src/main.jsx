@@ -4,10 +4,17 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import './index.css';
 import Recommend from './pages/Recommend.jsx'
 import Home from './pages/Home.jsx';
+import RootLayout from './components/RootLayout.jsx';
 
 const router = createBrowserRouter([
-  {path: "/", element:<Home/>},
-  {path: "/recommend", element:<Recommend/>},
+	{
+		element: <RootLayout />,
+		children: [
+		{path: "/", element:<Home/>},
+  	{path: "/recommend", element:<Recommend/>},
+	],
+	}
+	
 ]);
 
 createRoot(document.getElementById('root')).render(

@@ -1,5 +1,4 @@
 import {useEffect} from 'react';
-import Navbar from "../components/Navbar"
 import "./Home.css"
 function Home(){
 	useEffect(() => {
@@ -18,7 +17,6 @@ function Home(){
 	}, []);
 	return (
 		<>
-			<Navbar/>
 			<div className="page-container">
 				<img className="logo" src="/images/knobull-logo.png" alt="I'm a bulldog"/>
 				<h1 className="header">Knobull</h1>

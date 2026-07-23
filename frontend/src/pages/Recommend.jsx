@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import ResultCard from '../components/ResultCard';
-import Navbar from '../components/Navbar';
 import "./Recommend.css";
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
@@ -41,7 +40,6 @@ function Recommend() {
 
   return (
     <>
-      <Navbar/>
       <section id="hero" className={searched ? 'searched' : ''}>
         <h1>Recommend</h1>
         {!searched && (
