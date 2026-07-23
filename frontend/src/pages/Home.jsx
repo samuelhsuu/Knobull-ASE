@@ -25,9 +25,15 @@ function Home(){
 				<p className="slogan">"Support" for students, developed by students</p>
 				<div className="gcse-search"></div>
 				<div className="image-container">
-					<img src="../images/edx-logo-elm.svg"/>
-					<img src="../images/chatwithus.png"/>
-					<img src="../images/jobstars.png"/>
+					<a href="https://www.edx.org/" target="_">
+						<img src="../images/edx-logo-elm.svg"/>
+					</a>
+					<a href="https://knobull-chat.netlify.app/" target='_'>
+						<img src="../images/chatwithus.png"/>
+					</a>
+					<a href='https://jobstars.com/ref/99/' target='_'>
+						<img src="../images/jobstars.png"/>
+					</a>
 				</div>
 			</div>
 		</>
