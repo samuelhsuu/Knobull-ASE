@@ -5,6 +5,7 @@ import './index.css';
 import Recommend from './pages/Recommend.jsx'
 import Home from './pages/Home.jsx';
 import RootLayout from './components/RootLayout.jsx';
+import About from './pages/About.jsx';
 
 const router = createBrowserRouter([
 	{
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
 		children: [
 		{path: "/", element:<Home/>},
   	{path: "/recommend", element:<Recommend/>},
+		{path: "/about", element:<About/>}
 	],
 	}
 	

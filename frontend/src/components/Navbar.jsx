@@ -7,12 +7,11 @@ function Navbar(){
       <Link to ={"/"}>
         <img className="icon" src="/images/knobull-logo.png"/>
       </Link>
-      <li><a href="/About">About Us</a></li>
-      <li><a href="/Resources">Resources</a></li>
-      <li><a href="/Chat">Chat With Us</a></li>
-      <li><a href="/Privacy">Privacy</a></li>
-      <li><a href="/Contact">Contact</a></li>
-      <li><a href="/News">Student News</a></li>
+      <Link to ={"/recommend"}>
+				<li>Recommend</li>
+			</Link>
+      <li><a href="https://knobull-chat.netlify.app/" target="_">Chat With Us</a></li>
+      <li><a href="https://www.usnews.com/topics/subjects/students" target="_">Student News</a></li>
       <a href="https://www.linkedin.com/company/knobull-inc/">
         <img src="/images/Linkedin.png" style={{height:"55px",paddingTop:"3px"}}/>
       </a>

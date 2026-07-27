@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
   --text: #4d5156;
   --text-h: #202124;
@@ -15,6 +16,7 @@
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
+	--main-font: 'Montserrat', var(--sans);
   letter-spacing: normal;
   color-scheme: light;
   color: var(--text);
@@ -33,7 +35,7 @@ body {
   margin: 0;
 }
 
-#root {
+.content-box {
   width: 1126px;
   max-width: 100%;
   margin: 0 auto;
@@ -43,7 +45,26 @@ body {
   flex-direction: column;
   box-sizing: border-box;
 }
+/* Card and title for about, resources, privacy, and contact us pages */
+.content-card{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
 
+	background-color: white;
+	border-radius: 16px;
+	box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.1);
+	margin-top: 40px;
+	margin-bottom: 28px;
+	max-width: 60%;
+	
+}
+
+.content-title{
+	font-family: var(--main-font);
+	font-size: 40px;
+	font-weight: 550;
+}
 h1,
 h2 {
   font-family: var(--heading);
@@ -87,3 +108,21 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+.app-container{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	width: 100%;
+}
+
+.main-content{
+	flex: 1;
+}
+
+.logo{
+	width: 20vw;
+	height: auto;
+	margin-bottom: -20px;
+}
+

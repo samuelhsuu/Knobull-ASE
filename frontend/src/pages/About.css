@@ -1,0 +1,49 @@
+.banner{
+	min-height: 58vh;
+	width: 100%;
+
+	background-image: url('../../images/MountainTop.png');
+	background-size: cover;
+	background-position: center 65%;
+
+	display: flex;
+	flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+	box-sizing: border-box;
+	
+}
+
+.banner h1{
+	color: white;
+	font-family: var(--main-font);
+	margin-bottom: -10px;
+	font-size: 64px;
+	font-weight: 500;
+}
+.banner h2{
+	color: white;
+	font-family: var(--main-font);
+	font-size: 28px;
+	font-weight: 500;
+}
+.about-content{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100dvh;
+	padding-top:15px;
+	
+	background-color: #f4f6f8b2;
+	
+}
+
+
+
+.about-p{
+	font-family: var(--main-font);
+	padding: 0px 45px 30px 45px;
+	color: black;
+
+}
