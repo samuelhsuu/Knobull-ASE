@@ -1,0 +1,34 @@
+.banner{
+	all:unset;
+	font-family: var(--main-font);
+
+	min-height: 58vh;
+	width: 100%;
+	background-color: #0077ae;
+
+	display: flex;
+	flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+	line-height: 0.7;
+	box-sizing: border-box;
+}
+.logo{
+	margin: 40px 0px -8px 0px;
+}
+h2{
+	font-family: var(--main-font);
+	font-size: 32px;
+	font-weight: 400;
+}
+p a:link{
+	color: rgb(1, 114, 179);
+	text-decoration: none;
+}
+p a:visited{
+	color: rgb(1, 114, 179);
+}
+p a:hover{
+	text-decoration: underline;
+}

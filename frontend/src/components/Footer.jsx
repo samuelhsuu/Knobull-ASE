@@ -8,7 +8,9 @@ function Footer(){
 				<Link to={"/about"}>
 					<li>About Us</li>
 				</Link>
-				<li><a href="/Resources">Resources</a></li>
+				<Link to={"/resources"}>
+					<li>Resources</li>
+				</Link>
 				<li><a href="/Privacy">Privacy</a></li>
 				<li><a href="/Contact">Contact</a></li>
 			</ul>

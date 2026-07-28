@@ -7,10 +7,10 @@ function About(){
 				<img className="logo" src='../../images/knobull-logo.png'/>
 				<h2>Setting a high standard of trust!</h2>
 			</div>
-			<div className='about-content'>
+			<div className='content-container'>
 				<div className='content-card'>
 					<h1 className='content-title'>About Knobull</h1>
-					<p className='about-p'>Most academic search engines might start by proposing super results or recommending that you use them exclusively and fully trust their support. We think differently at Knobull. The process starts with you. Our passion is working with students to deliver a cyber-secure world-class academic experience. We love what we do. Our purpose is to simplify and support your life as a student with one stop support systems so that you can give attention to learning and efforts that demand your time! <br/> <br/>
+					<p>Most academic search engines might start by proposing super results or recommending that you use them exclusively and fully trust their support. We think differently at Knobull. The process starts with you. Our passion is working with students to deliver a cyber-secure world-class academic experience. We love what we do. Our purpose is to simplify and support your life as a student with one stop support systems so that you can give attention to learning and efforts that demand your time! <br/> <br/>
 
 					The Knobull Academic Search Engine users have the ability to search through 5 billion academic sources without commercial chatter, chat with your virtual study group, check student news articles, select from a vast array of links to academic resources and receive instant answers to burning questions close at hand! <br/> <br/>
 
@@ -20,7 +20,7 @@ function About(){
 
 					Our mission is to move academic and career success forward with brave, productive collaboration. We can change education and industries for the better by offering native advertising design and delivery for like-minded customers who want to help build valued academic tools for the student population.</p>
 				</div>
-				
+				<p className='copyright'>© 2026 Knobull Inc. All rights reserved.</p>
 			</div>
 		</>
 	);
