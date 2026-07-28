@@ -2,7 +2,7 @@ import './Resources.css';
 function Resources(){
 	return (
 		<>
-			<div className='banner'>
+			<div className='resources-banner'>
 				<h1>Research</h1><h1>Resources</h1>
 				<img className='logo' src='../images/knobull-logo.png'/>
 				<h2>Websites, tools, search support, writing success</h2>

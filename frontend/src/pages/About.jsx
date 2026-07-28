@@ -2,7 +2,7 @@ import './About.css';
 function About(){
 	return (
 		<>
-			<div className='banner'>
+			<div className='about-banner'>
 				<h1>About Us</h1>
 				<img className="logo" src='../../images/knobull-logo.png'/>
 				<h2>Setting a high standard of trust!</h2>

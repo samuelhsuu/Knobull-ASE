@@ -1,4 +1,4 @@
-.about-banner{
+.privacy-banner{
 	min-height: 58vh;
 	width: 100%;
 
@@ -11,27 +11,32 @@
   justify-content: space-around;
   align-items: center;
   text-align: center;
-	box-sizing: border-box;
-	
+	box-sizing: border-box;	
 }
-
-.about-banner h1{
+.logo{
+	margin-top: 15px;
+	height: 250px;
+	width: auto;
+}
+.privacy-banner h1{
 	color: white;
 	font-family: var(--main-font);
+
 	margin-bottom: -10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	font-size: 64px;
 	font-weight: 500;
 }
-.about-banner h2{
-	color: white;
-	font-family: var(--main-font);
+.privacy-banner h2{
+	font-weight: 550;
 	font-size: 28px;
-	font-weight: 500;
+	padding-bottom: 15px;
+	padding-top: 15px;
 }
 
-p{
+h1{
 	font-family: var(--main-font);
-	padding: 0px 45px 30px 45px;
-	color: black;
-
+	font-size: 40px;
+	font-weight: 550;
 }

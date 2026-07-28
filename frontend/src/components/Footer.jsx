@@ -11,7 +11,9 @@ function Footer(){
 				<Link to={"/resources"}>
 					<li>Resources</li>
 				</Link>
-				<li><a href="/Privacy">Privacy</a></li>
+				<Link to={"/privacy"}>
+					<li>Privacy</li>
+				</Link>
 				<li><a href="/Contact">Contact</a></li>
 			</ul>
 		</nav>

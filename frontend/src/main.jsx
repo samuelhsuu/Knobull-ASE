@@ -7,6 +7,7 @@ import Home from './pages/Home.jsx';
 import RootLayout from './components/RootLayout.jsx';
 import About from './pages/About.jsx';
 import Resources from './pages/Resources.jsx';
+import Privacy from './pages/Privacy.jsx';
 
 const router = createBrowserRouter([
 	{
@@ -15,7 +16,8 @@ const router = createBrowserRouter([
 		{path: "/", element:<Home/>},
   	{path: "/recommend", element:<Recommend/>},
 		{path: "/about", element:<About/>},
-		{path: "/resources", element:<Resources/>}
+		{path: "/resources", element:<Resources/>},
+		{path: "/privacy", element: <Privacy/>}
 	],
 	}
 	

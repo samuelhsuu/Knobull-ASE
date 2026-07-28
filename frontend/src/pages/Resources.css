@@ -1,9 +1,10 @@
-.banner{
-	all:unset;
+.resources-banner{
 	font-family: var(--main-font);
 
 	min-height: 58vh;
 	width: 100%;
+	padding-top: 30px;
+	padding-bottom: 15px;
 	background-color: #0077ae;
 
 	display: flex;
@@ -11,16 +12,23 @@
   justify-content: space-around;
   align-items: center;
   text-align: center;
-	line-height: 0.7;
 	box-sizing: border-box;
 }
 .logo{
-	margin: 40px 0px -8px 0px;
+	margin-top: -10px;
+}
+.resources-banner h1{
+	font-family: var(--main-font);
+	color: white;
 }
 h2{
 	font-family: var(--main-font);
 	font-size: 32px;
 	font-weight: 400;
+	color: white;
+}
+p h2{
+	color: black;
 }
 p a:link{
 	color: rgb(1, 114, 179);
