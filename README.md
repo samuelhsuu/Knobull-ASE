@@ -1,6 +1,7 @@
-# Sample Run:
-- cd backend and run node index.js
-- In a new terminal, run:
-curl -X POST http://localhost:5000/api/recommend \
-     -H "Content-Type: application/json" \
-     -d '{"goal": "quantum error correction and matrix hardware design"}'
+## Demo
+
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/31be5fc4-7cef-4336-ae32-652fa4815b17" width="100%" controls autoplay muted loop>
+    Your browser does not support the video tag.
+  </video>
+</p>
