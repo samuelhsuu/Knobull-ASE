@@ -1,0 +1,59 @@
+.solid-banner h2{
+	font-weight: 500;
+}
+
+.content-form input[type="text"]{
+	margin-left: 45px;
+	margin-bottom: 20px;
+	padding: 8px 12px 8px 12px;
+	width: 87%;
+	font-family: var(--main-font);
+	
+	outline: none;
+	border-color: gray;
+	border: 1px solid #ccc;
+	transition: box-shadow 0.3s ease, border-color 0.3s ease;
+	border-radius: 4px;
+}
+input[type="text"]:focus {
+  border-color: #3b82f6; 
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}
+
+.content-card{
+	width: 100%;
+}
+
+.content-form{
+	width: 100%;
+	justify-content: flex-start;
+}
+
+.content-form label{
+	font-family: var(--main-font);
+	padding-left: 45px;
+	padding-bottom: 0px;
+	font-size: 15px;
+	font-weight: 550;
+}
+
+input.message{
+	padding-bottom: 80px !important;
+}
+
+button{
+	margin-left: 45px;
+	margin-bottom: 15px;
+	padding: 12px 16px;
+	
+	border: none;
+	border-radius: 5px;
+	font-family: var(--main-font);
+	font-size: 13px;
+	color: white;
+	background-color: rgb(17, 175, 17);
+}
+
+.copyright{
+	/* margin-top: 100px; */
+}

@@ -40,7 +40,9 @@ function Recommend() {
 
   return (
     <>
+			
       <section id="hero" className={searched ? 'searched' : ''}>
+				<img className='logo' src='./images/knobull-logo.png'/>
         <h1>Recommend</h1>
         {!searched && (
           <p>Tell us what you're working toward, and we'll match you to courses and resources.</p>

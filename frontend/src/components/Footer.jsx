@@ -14,7 +14,9 @@ function Footer(){
 				<Link to={"/privacy"}>
 					<li>Privacy</li>
 				</Link>
-				<li><a href="/Contact">Contact</a></li>
+				<Link to={"/contact"}>
+					<li>Contact Us</li>
+				</Link>
 			</ul>
 		</nav>
 	);

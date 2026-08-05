@@ -10,9 +10,9 @@ function Navbar(){
       <Link to ={"/recommend"}>
 				<li>Recommend</li>
 			</Link>
-      <li><a href="https://knobull-chat.netlify.app/" target="_">Chat With Us</a></li>
-      <li><a href="https://www.usnews.com/topics/subjects/students" target="_">Student News</a></li>
-      <a href="https://www.linkedin.com/company/knobull-inc/">
+      <li><a href="https://knobull-chat.netlify.app/" target="_blank">Chat With Us</a></li>
+      <li><a href="https://www.usnews.com/topics/subjects/students" target="_blank">Student News</a></li>
+      <a href="https://www.linkedin.com/company/knobull-inc/" target="_blank">
         <img src="/images/Linkedin.png" style={{height:"55px",paddingTop:"3px"}}/>
       </a>
     </ul>

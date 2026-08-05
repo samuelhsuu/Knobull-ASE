@@ -1,10 +1,10 @@
-.resources-banner{
+.solid-banner{
 	font-family: var(--main-font);
 
 	min-height: 58vh;
 	width: 100%;
 	padding-top: 30px;
-	padding-bottom: 15px;
+	padding-bottom: 30px;
 	background-color: #0077ae;
 
 	display: flex;
@@ -15,11 +15,13 @@
 	box-sizing: border-box;
 }
 .logo{
-	margin-top: -10px;
+	margin-bottom: 10px;
 }
-.resources-banner h1{
+.solid-banner h1{
 	font-family: var(--main-font);
+	font-size: 64px;
 	color: white;
+	line-height: .1;
 }
 h2{
 	font-family: var(--main-font);

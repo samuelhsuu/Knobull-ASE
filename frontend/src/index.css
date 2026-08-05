@@ -31,6 +31,11 @@
   }
 }
 
+html, body{
+	scrollbar-color: #444444 #1e1e1e;
+	scrollbar-width: thin;
+}
+
 body {
   margin: 0;
 }

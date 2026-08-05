@@ -23,13 +23,13 @@ function Home(){
 				<p className="slogan">"Support" for students, developed by students</p>
 				<div className="gcse-search"></div>
 				<div className="image-container">
-					<a href="https://www.edx.org/" target="_">
+					<a href="https://www.edx.org/" target="_blank">
 						<img src="../images/edx-logo-elm.svg"/>
 					</a>
-					<a href="https://knobull-chat.netlify.app/" target='_'>
+					<a href="https://knobull-chat.netlify.app/" target='_blank'>
 						<img src="../images/chatwithus.png"/>
 					</a>
-					<a href='https://jobstars.com/ref/99/' target='_'>
+					<a href='https://jobstars.com/ref/99/' target='_blank'>
 						<img src="../images/jobstars.png"/>
 					</a>
 				</div>

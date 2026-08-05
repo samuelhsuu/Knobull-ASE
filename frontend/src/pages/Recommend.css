@@ -2,13 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  padding: 80px 20px 40px;
+  gap: 10px;
   text-align: center;
   transition: padding 0.2s;
 
   h1 {
     transition: font-size 0.2s, margin 0.2s;
+		margin-top: 0px;
+		margin-bottom: 10px;
+		font-family: var(--main-font)
   }
 
   p {
@@ -37,10 +39,14 @@
 
 #goal-form {
   display: flex;
-  gap: 10px;
+	flex-direction: row;
+	justify-content: center;
+  gap: 20px;
   width: 100%;
-  max-width: 480px;
-  margin-top: 8px;
+	height: auto;
+	max-height: 60px;
+  max-width: 450px;
+  margin-top: 4px;
 
   @media (max-width: 640px) {
     flex-direction: column;
@@ -71,13 +77,15 @@
 #goal-form button {
   font: inherit;
   font-weight: 400;
-  padding: 12px 24px;
+  padding: 8px 24px;
+	margin: 3px;
   border-radius: 6px;
   border: 1px solid var(--code-bg);
   color: white;
   background: var(--accent);
   cursor: pointer;
-  transition: box-shadow 0.2s, border-color 0.2s;
+  
+	transition: background-color 0.3s ease, transform 0.2s ease;
 
   &:disabled {
     opacity: 0.5;
@@ -162,6 +170,7 @@
 }
 
 .result-description {
+	padding: 0px;
   color: var(--text);
   margin: 0;
 }
