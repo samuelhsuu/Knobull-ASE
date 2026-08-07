@@ -1,4 +1,5 @@
 import './Contact.css';
+import ContactForm from '../components/ContactForm'
 function Contact(){
 	return(
 		<>
@@ -12,21 +13,7 @@ function Contact(){
 				<div className='content-card'>
 					<h1>Send us a message</h1>
 					<div className='content-form'>
-
-						<label htmlFor='fname'>First Name</label>
-						<input type='text' id='fname' placeholder='Your name...' required/>
-
-						<label htmlFor='lname'>Last Name</label>
-						<input type='text' id='lname' placeholder='Your last name...' required/>
-
-						<label htmlFor='email'>Email</label>
-						<input type='text' id='email' placeholder='you@example.com' required/>
-
-						<label htmlFor='message'>Message</label>
-						<input type='text' id='message' className='message' placeholder='Write something...' required/>
-
-						<button type='submit'>Submit</button>
-
+						<ContactForm/>
 					</div>
 					
 				</div>
