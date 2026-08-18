@@ -9,6 +9,7 @@ import About from './pages/About.jsx';
 import Resources from './pages/Resources.jsx';
 import Privacy from './pages/Privacy.jsx';
 import Contact from './pages/Contact.jsx';
+import NotFound from './pages/NotFound.jsx';
 
 const router = createBrowserRouter([
 	{
@@ -19,7 +20,8 @@ const router = createBrowserRouter([
 		{path: "/about", element:<About/>},
 		{path: "/resources", element:<Resources/>},
 		{path: "/privacy", element: <Privacy/>},
-		{path: "/contact", element: <Contact />}
+		{path: "/contact", element: <Contact />},
+		{path: "*", element: <NotFound />}
 	],
 	}
 	
