@@ -119,7 +119,7 @@ app.get('/api/health', (req, res) => {
 // ------------------------------------------------------------------
 
 // Set folder path ('dist' for Vite or 'build' for Create React App)
-const buildFolder = path.join(__dirname, 'dist'); 
+const buildFolder = path.join(__dirname, '../frontend/dist');
 
 // Serve static assets
 app.use(express.static(buildFolder));
