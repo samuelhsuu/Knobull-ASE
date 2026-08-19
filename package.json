@@ -1,5 +1,14 @@
 {
-  "dependencies": {
-    "@emailjs/browser": "^4.4.1"
-  }
+	"name": "root-app",
+  	"private": true,
+  "scripts": {
+    "install-backend": "npm --prefix backend install",
+    "install-frontend": "npm --prefix frontend install",
+    "build-frontend": "npm --prefix frontend run build",
+    "heroku-postbuild": "npm run install-backend && npm run install-frontend && npm run build-frontend",
+    "start": "node backend/index.js"
+  },
+	"dependencies": {
+		"@emailjs/browser": "^4.4.1"
+	}
 }
