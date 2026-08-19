@@ -1,6 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';                          // for file paths
+import { fileURLToPath } from 'url';             //  for ESM __dirname
 import { createClient } from '@supabase/supabase-js';
 import { pipeline } from '@huggingface/transformers';
 
@@ -111,6 +113,20 @@ app.post('/api/recommend', async (req, res) => {
 
 app.get('/api/health', (req, res) => {
 	res.json({status: "online"});
+});
+// ------------------------------------------------------------------
+// 2. STATIC FRONTEND SERVING
+// ------------------------------------------------------------------
+
+// Set folder path ('dist' for Vite or 'build' for Create React App)
+const buildFolder = path.join(__dirname, 'dist'); 
+
+// Serve static assets
+app.use(express.static(buildFolder));
+
+// Catch-all route: any unknown GET request gets served React's index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(buildFolder, 'index.html'));
 });
 
 app.listen(PORT, ()=>{
