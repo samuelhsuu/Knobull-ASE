@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ResultCard from '../components/ResultCard';
 import "./Recommend.css";
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+const API_URL = import.meta.env.VITE_API_URL || ''
 
 function Recommend() {
   const [goal, setGoal] = useState('')
