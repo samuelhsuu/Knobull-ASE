@@ -128,7 +128,7 @@ const buildFolder = path.join(__dirname, '../frontend/dist');
 app.use(express.static(buildFolder));
 
 // Catch-all route: any unknown GET request gets served React's index.html
-app.get('(.*)', (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(buildFolder, 'index.html'));
 });
 
