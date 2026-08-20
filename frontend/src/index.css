@@ -147,3 +147,27 @@ code {
 	margin-bottom: -20px;
 }
 
+@media (max-width: 768px) {
+	.content-container {
+		padding-top: 10px;
+	}
+
+	.content-card {
+		max-width: calc(100% - 32px);
+		margin-top: 24px;
+		margin-bottom: 20px;
+	}
+
+	.content-title {
+		font-size: 28px;
+		text-align: center;
+		padding: 0 16px;
+	}
+
+	.logo {
+		width: 50vw;
+		max-width: 200px;
+		margin-bottom: 0;
+	}
+}
+
