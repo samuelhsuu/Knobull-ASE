@@ -18,21 +18,28 @@ function Home(){
 	return (
 		<>
 			<div className="page-container">
-				<img className="logo" src="/images/knobull-logo.png" alt="I'm a bulldog"/>
-				<h1 className="header">Knobull</h1>
-				<p className="slogan">"Support" for students, developed by students</p>
-				<div className="gcse-search"></div>
-				<div className="image-container">
-					<a href="https://www.edx.org/" target="_blank">
-						<img src="../images/edx-logo-elm.svg"/>
-					</a>
-					<a href="https://knobull-chat.netlify.app/" target='_blank'>
-						<img src="../images/chatwithus.png"/>
-					</a>
-					<a href='https://jobstars.com/ref/99/' target='_blank'>
-						<img src="../images/jobstars.png"/>
-					</a>
-				</div>
+				<section className="home-hero">
+					<img className="logo home-logo" src="/images/knobull-logo.png" alt="Knobull"/>
+					<h1 className="header">Knobull</h1>
+					<p className="slogan">"Support" for students, developed by students</p>
+					<div className="search-shell">
+						<div className="gcse-search"></div>
+					</div>
+				</section>
+
+				<section className="partner-section" aria-label="Partner links">
+					<div className="image-container">
+						<a className="partner-card" href="https://www.edx.org/" target="_blank" rel="noreferrer">
+							<img src="/images/edx-logo-elm.svg" alt="edX" />
+						</a>
+						<a className="partner-card" href="https://knobull-chat.netlify.app/" target="_blank" rel="noreferrer">
+							<img src="/images/chatwithus.png" alt="Chat With Us" />
+						</a>
+						<a className="partner-card" href="https://jobstars.com/ref/99/" target="_blank" rel="noreferrer">
+							<img src="/images/jobstars.png" alt="JobStars" />
+						</a>
+					</div>
+				</section>
 			</div>
 		</>
 	);

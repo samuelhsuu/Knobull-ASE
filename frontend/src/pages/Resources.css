@@ -42,3 +42,20 @@ p a:visited{
 p a:hover{
 	text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+	.solid-banner {
+		min-height: 40vh;
+		padding: 24px 16px;
+	}
+
+	.solid-banner h1 {
+		font-size: 36px;
+		line-height: 1.2;
+	}
+
+	.solid-banner h2 {
+		font-size: 20px;
+		line-height: 1.4;
+	}
+}
